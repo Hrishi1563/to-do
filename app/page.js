@@ -10,6 +10,7 @@ export default function Home() {
 
   const handleCreateTask = async (e) => {
     e.preventDefault();
+
     try {
       await setTasks((prevState) => {
         return [
@@ -57,10 +58,11 @@ export default function Home() {
                 ref={titleRef}
                 placeholder="Enter Title"
                 className="mt-3 ml-2 border-2 rounded-xl p-2 hover:border-green-400"
+                required
               />
             </div>
             <div className="flex flex-col">
-              <label htmlFor="description" className="font-bold text-white">
+              <label htmlFor="description" className="font-bold text-white ">
                 Enter Task description
               </label>
               <input
@@ -69,6 +71,7 @@ export default function Home() {
                 ref={descriptionRef}
                 placeholder="Enter description"
                 className="mt-3 ml-2 border-2 rounded-xl p-2 hover:border-green-400"
+                required
               />
             </div>
             <button
